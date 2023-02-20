@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      ul {
+        list-style: none;
+      }
+      .container {
+        background-color: teal;
+        color: white;
+      }
+      .head-p {
+        padding: 40px;
+      }
+      .head-p .head-flex {
+        display: flex;
+        justify-content: space-around;
+      }
+      .head-flex ul {
+        display: flex;
+        gap: 10px;
+        display: none;
+      }
+      .head-flex .menu-show ul{
+        display: block;
+        background-color:rgb(65, 9, 9);
+        flex-direction:column ;
+        position: absolute;
+        top: 20px;
+        right: 300px;
+        border-radius: 5px;
+        color: black;
+        padding: 10px;
+        text-align: center;
+
+      }
+
+      .head-flex .dis-menu span {
+        display: block;
+        border: 2px solid rgb(215, 214, 214);
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="head-p">
+          <div class="head-flex">
+            <div class="logo">
+              <h1>Menu bar</h1>
+            </div>
+            <div class="right-menu">
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contant</a></li>
+                <li><a href="">Help</a></li>
+              </ul>
+              <div id="btn">
+                <div class="dis-menu">
+                  <span class="fa-solid fa-bars"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+ // button varible
+var dis_menu = document.querySelector(".dis-menu");
+// nav_bar variable
+var header_top = document.querySelector(".right-menu");
+dis_menu.addEventListener("click", function () {
+    header_top.classList.toggle("menu-show");
+});
+    </script>
+  </body>
+</html>

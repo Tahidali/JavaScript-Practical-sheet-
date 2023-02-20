@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    * {
+        margin: 0px;
+        padding: 0px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 20px;
+      }
+      .container {
+        width: 95%;
+        padding: 10px;
+      }
+      body {
+        background: url(slider1.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 900px;
+      }
+            .nav-p {
+        /* padding: 40px; */
+      }
+     .left-logo {
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        padding: 30px;
+        transition: 0.5s ease all;
+        text-shadow: 4px 9px 3px yellow
+      }
+      .left-logo-fixed{
+        display: flex;
+        justify-content: space-around;
+        background-color:rgba(235, 13, 216, 0.459);
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        padding: 30px;
+        transition: 0.5s ease all;
+      }
+      .left-logo .right-menu a {
+        color: white;
+        padding: 30px;
+      }
+      
+    </style>
+  </head>
+  <body >
+    <section class="section">
+      <div class="container">
+        <div class="nav-p">
+          <div class="left-logo">
+            <div class="logo">
+              <h1>Logo</h1>
+            </div>
+            <div class="right-menu">
+              <tr>
+                <td>
+                  <a href="">About</a>
+                </td>
+                <td><a href="">Help</a></td>
+                <td><a href="">services</a></td>
+                <td><a href="">Contact</a></td>
+              </tr>
+            <span class="fa-solid fa-moon"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+        function change_bg(){
+            let left_logo = document.querySelector(".section")
+            let nav_scroll = window.scrollY;
+            if (nav_scroll > 0){
+                left_logo.classList.add("left-logo-fixed");
+            }else {
+                left_logo.classList.remove("left-logo-fixed")
+            }
+        }
+        window.addEventListener("scroll",change_bg)
+    </script>
+</body>
+</html>

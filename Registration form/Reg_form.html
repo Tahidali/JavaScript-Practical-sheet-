@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="blank_validation.js"></script>
+    <script src="regular_ex_validation.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      span {
+        color: red;
+        background-color: white;
+      }
+      body {
+        background-image: url(../img.jpg);
+        background: linear-gradient(
+          rgb(246, 195, 13),
+          rgb(132, 231, 168),
+          lightpink
+        );
+        font-size: 20px;
+      }
+      form {
+        height: auto;
+        width: auto;
+        text-align: center;
+        margin: auto;
+        /* line-height: 20px; */
+        padding: 40px;
+      }
+      input[type="text"],
+      input[type="date"] {
+        height: 30px;
+        width: 250px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .password {
+        height: 30px;
+        width: 250px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .fname {
+        padding: 15px;
+      }
+      .midname {
+        padding: 0px 18px 0px 0px;
+      }
+      .lastname {
+        padding: 15px;
+      }
+      .addr {
+        display: flex;
+        align-items: center;
+        margin-left: 570px;
+      }
+      .addr .addr-input {
+        border-radius: 10px;
+        width: 250px;
+        text-align: center;
+      }
+      .dob {
+        padding: 15px 18px 0px 0px;
+      }
+      .gender {
+        padding: 15px;
+      }
+      .mno {
+        padding: 15px 18px 0px 0px;
+      }
+      .mail {
+        padding: 11px 5px 0px 0px;
+      }
+      .pass {
+        padding: 15px 51px 0px 0px;
+      }
+      .btn {
+        margin: auto;
+        padding: 30px;
+      }
+      .btn button {
+        height: 30px;
+        width: 150px;
+        background-color: blue;
+        border-radius: 10px;
+        border: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" name="form1">
+      <h2>Ragistration for job</h2>
+      <div class="fname">
+        <label for="">First Name</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter First Name"
+          onkeyup="return check_form_valid(),name_reg_ex()"
+        />
+        <span id="msg1"></span>
+      </div>
+      <div class="midname">
+        <label for="">Middle Name</label>
+        <input
+          type="text"
+          id="mname"
+          placeholder="Enter Middle Name"
+          onkeyup="mname_reg_ex()"
+        />
+        <span id="msg2"></span>
+      </div>
+      <div class="lastname">
+        <label for="">Last Name</label>
+        <input
+          type="text"
+          id="ltname"
+          placeholder="Enter Last Name"
+          onkeyup="ltname_reg_ex()"
+        />
+        <span id="msg3"></span>
+      </div>
+      <div class="addr">
+        <label for="">Address :</label>
+        <textarea
+          name=""
+          id="addr"
+          cols="25"
+          rows="3"
+          placeholder="Enter Address"
+          class="addr-input"
+          onkeyup="return address_range()"
+        ></textarea>
+        <span id="msg4"></span>
+      </div>
+      <div class="dob">
+        <label for="">Date of Birth</label>
+        <input type="date" id="date" />
+        <span id="msg5"></span>
+      </div>
+      <div class="gender">
+        <label for="">Gender :</label>
+        Male <input type="radio" id="male" name="gen"/> Female<input
+          type="radio"
+          id="female"
+          name="gen"
+        />
+        <span id="msg6"></span>
+      </div>
+      <!-- <div class="selecte"> -->
+      Select
+      <select name="" id="exp">
+        <option value="">--select--</option>
+        <option value="">--1 year--</option>
+        <option value="">--2 year--</option>
+        <option value="">Under 5 years</option>
+        <span id="msg7"></span>
+      </select>
+      <div class="mno">
+        <label for="">Mobile No</label>
+        <input
+          type="text"
+          placeholder="Enter Mobile No"
+          id="mnum"
+          onkeyup="mnum_reg_reg(), mno_ex()"
+        />
+        <span id="msg8"></span>
+        <br />
+        <span id="msg11"></span>
+      </div>
+      <div class="mail">
+        <label for="">Email id</label>
+        <input
+          type="text"
+          placeholder="Enetr Email"
+          id="email"
+          onkeyup="email_reg() "
+        />
+        <span id="msg9"></span>
+      </div>
+      <div class="pass">
+        <label for="">Enter Password</label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          id="pass"
+          class="password"
+        />
+        <span id="msg10"></span>
+      </div>
+      <div class="show pass">
+        <input type="checkbox" id="show-pass" onclick=" return show_pass()" />
+        show Password
+      </div>
+      <div class="btn">
+        <button type="button" onclick="return check_form_valid()">
+          Submit
+        </button>
+      </div>
+    </form>
+  </body>
+</html>
